@@ -32,16 +32,12 @@ function App() {
     resetForm();
   };
 
-  const handleSearch = ev => {
-    setSearchValue(ev.target.value.toLowerCase());
-  };
-
   return (
     <>
       <div className={styles.appContent}>
         <h1>Phonebook</h1>
         <ContactForm onFormSubmit={addContact} />
-        <SearchBox onSearchChange={handleSearch} />
+        <SearchBox />
         <ContactList />
       </div>
     </>

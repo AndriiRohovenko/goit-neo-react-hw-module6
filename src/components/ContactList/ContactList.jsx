@@ -7,6 +7,7 @@ function ContactList() {
   const contactsData = useSelector(state => state.contacts);
   const filterData = useSelector(state => state.filters.filterByName.name);
   const dispatch = useDispatch();
+
   const foundContacts = () => {
     return contactsData.filter(item =>
       item.name.toLowerCase().includes(filterData)
