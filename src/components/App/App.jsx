@@ -32,20 +32,8 @@ function App() {
     resetForm();
   };
 
-  const handleDeleteAction = id => {
-    setContacts(prevContacts =>
-      prevContacts.filter(contact => contact.id !== id)
-    );
-  };
-
   const handleSearch = ev => {
     setSearchValue(ev.target.value.toLowerCase());
-  };
-
-  const foundContacts = () => {
-    return contacts.filter(item =>
-      item.name.toLowerCase().includes(searchValue)
-    );
   };
 
   return (
@@ -54,7 +42,7 @@ function App() {
         <h1>Phonebook</h1>
         <ContactForm onFormSubmit={addContact} />
         <SearchBox onSearchChange={handleSearch} />
-        <ContactList data={foundContacts()} onDelete={handleDeleteAction} />
+        <ContactList />
       </div>
     </>
   );
