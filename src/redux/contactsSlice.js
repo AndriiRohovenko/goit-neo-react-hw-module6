@@ -3,14 +3,16 @@ import mockedData from '../mockedData/contacts.json';
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: mockedData,
+  initialState: {
+    items: mockedData,
+  },
   reducers: {
     addContact(state, action) {
-      state.push(action.payload);
+      state.items.push(action.payload);
     },
     deleteContact(state, action) {
-      const index = state.findIndex(task => task.id === action.payload);
-      state.splice(index, 1);
+      const index = state.items.findIndex(task => task.id === action.payload);
+      state.items.splice(index, 1);
     },
   },
 });
