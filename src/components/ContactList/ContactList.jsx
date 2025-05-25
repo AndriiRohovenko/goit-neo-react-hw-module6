@@ -17,7 +17,11 @@ function ContactList() {
       <ul className={styles.contactListWrapper}>
         {foundContacts().map(contact => (
           <li key={contact.id}>
-            <Contact name={contact.name} number={contact.number} />
+            <Contact
+              contactId={contact.id}
+              name={contact.name}
+              number={contact.number}
+            />
           </li>
         ))}
       </ul>

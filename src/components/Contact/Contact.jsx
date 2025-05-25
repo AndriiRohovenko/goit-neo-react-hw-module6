@@ -4,10 +4,10 @@ import { IoPerson } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contactsSlice';
 
-function Contact({ name, number }) {
+function Contact({ contactId, name, number }) {
   const dispatch = useDispatch();
-  const handleDeleteAction = id => {
-    dispatch(deleteContact(id));
+  const handleDeleteAction = () => {
+    dispatch(deleteContact(contactId));
   };
 
   return (
