@@ -10,20 +10,14 @@ const contactsConfig = {
   storage,
 };
 
-const filtersConfig = {
-  key: 'filtersList',
-  storage,
-};
-
 const persistedContactsReducer = persistReducer(
   contactsConfig,
   contactsReducer
 );
-const persistedFiltersReducer = persistReducer(filtersConfig, filtersReducer);
 
 const rootReducer = combineReducers({
   contacts: persistedContactsReducer,
-  filters: persistedFiltersReducer,
+  filters: filtersReducer,
 });
 
 export const store = configureStore({
